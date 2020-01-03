@@ -8,9 +8,9 @@ if(cluster.isMaster) {
     cluster.fork();
   }
 
-  cluster.on("exit", (worker, code) => {
+  cluster.on("exit", (worker, code, signal) => {
     if(code !== 0 && !worker.exitedAfterDisconnect) {
-      console.log("Worker was restarted");
+      console.log("Worker was restarted: ", worker.process.pid, code, signal);
       cluster.fork();
     }
   });
