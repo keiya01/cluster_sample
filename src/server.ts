@@ -13,4 +13,4 @@ server.listen(process.argv[2] || 3000, () => {
 
 setTimeout(() => {
   throw new Error("Worker clashed");
-}, Math.ceil(Math.random() * 10) * 1000);
+}, Math.ceil(Math.random() * 100) * 1000);
