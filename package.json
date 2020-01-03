@@ -4,6 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
+    "start": "ts-node src",
     "build": "babel src --out-dir dist --extensions \".ts\""
   },
   "devDependencies": {
