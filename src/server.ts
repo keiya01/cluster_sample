@@ -10,3 +10,7 @@ const server = http.createServer((_, res) => {
 server.listen(process.argv[2] || 3000, () => {
   console.log(`Started in ${pid}`);
 });
+
+setTimeout(() => {
+  throw new Error("Worker clashed");
+}, Math.ceil(Math.random() * 10) * 1000);
